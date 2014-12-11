@@ -1,0 +1,50 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french,francais]{babel}
+\usepackage{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{numprint}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{color}
+
+\geometry{
+	body={160mm,250mm},
+	left=25mm,top=25mm,
+	headheight=7mm,
+	headsep=4mm,
+	marginparsep=4mm,
+	marginparwidth=21mm}
+\lstset{basicstyle=\footnotesize,
+		breaklines=true,
+		language=Matlab,
+		frame=single,
+		showstringspaces=false}
+
+
+
+\newcommand{\Course}{EPHEC} % Course/class
+\newcommand{\AuthorName}{Groupe 3TL1.X} % Your name
+\newcommand{\Date}{Décembre 2014}
+
+
+\author{Herrier Lucie \and Juckler Christian \and Musuvaho Grace \and Nyssens Sylvain}
+\date{\today}
+
+\begin{document}
+\input{cover}
+\maketitle
+\input{presentation}
+\input{analyse}
+\input{amelioration}
+\input{analyseGroupe}
+\appendix
+\section{Code}
+\end{document}
