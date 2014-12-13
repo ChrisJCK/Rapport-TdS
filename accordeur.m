@@ -306,7 +306,7 @@ else
     color=[0 1 0]; % Vert
 end
 bar(frequence,'facecolor', color);
-xlim([0.7,1.3]);
+xlim([0.6,1.4]);
 set(gca,'xtick',[]);
 xlabel(note);
 ylim([(x-60),(x+60)]);
