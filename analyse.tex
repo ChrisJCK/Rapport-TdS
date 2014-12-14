@@ -2,4 +2,25 @@
 Lors de la réalisation de notre accordeur, nous sommes passés par plusieurs étapes avant d'arriver au produit actuel. Cette partie du rapport explique ces différentes phases de développement, ainsi que les difficultés rencontrées au cours de celles-ci.\\
 
 En premier lieu, nous avons tout d'abord cherché à enregistrer un son dans Matlab. En effet, nous voulions pouvoir visualiser le spectre fréquentiel de l'enregistrement du son produit par une corde de guitare sur une durée déterminée.
+Après plusieurs tentatives, nous y sommes arrivé.
+Nous nous sommes vite rendu compte qu'il y avait un problème dans notre analyse.
+Nous avons sous-estimé la puissance des harmoniques.
+Lors de nos test, nous travaillions avec un logiciel capable de simuler un diapason et une guitare.
+Avec le diapason, nous n'avions aucun doute sur notre approche.
+Mais avec la guitare, nous avons remarqué que les harmoniques étaient plus puissante que la fréquence fondamentale.\\
+
+Dans un deuxième temps, nous avons cherché à éliminer les harmoniques.
+Pour ce faire, nous avons analysé les différents accords existants.
+Il en a résulté que nous pouvions nous passer des fréquences au-delà de \numprint[kHz]{2}.
+%Valeur a vérifier
+Ensuite, nous avons cherché à limiter la représentation graphique autour de la fréquence cherchée.
+Chaque note possède sa propre fréquence, il n'est pas compliqué de borner les fréquences représentables sur le graphique.\\
+
+Dans un troisième temps, nous avons réfléchi à une façon de stocker les différents accords existants en associant la note avec sa fréquence.
+
+Parallèlement, nous avons commencé une interface graphique plus intuitive pour l'utilisateur.\\
+
+Finalement, nous avons assemblé l'interface graphique et la fonction de génération des fréquences des accords pour arriver à un programme fonctionnel.
+
+
 % A compléter
