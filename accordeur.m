@@ -22,7 +22,7 @@ function varargout = accordeur(varargin)
 
 % Edit the above text to modify the response to help accordeur
 
-% Last Modified by GUIDE v2.5 11-Dec-2014 22:40:42
+% Last Modified by GUIDE v2.5 14-Dec-2014 17:00:02
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -131,6 +131,7 @@ if strcmp(get(hObject,'Visible'),'off')
     %% Barre de départ et bouton de départ avec l'accord
     accordBar(40,100, '');
     setBoutonsNotes(AccordE, handles);
+    imageNotes(handles);
 end
 % Effacer l'écran
 clc;
@@ -260,6 +261,35 @@ activerNote(5, handles);
 function note6_Callback(hObject, eventdata, handles)
 activerNote(6, handles);
 
+
+% --- Executes on button press in play_note1.
+function play_note1_Callback(hObject, eventdata, handles)
+jouerNote(handles.Accord,1);
+
+
+% --- Executes on button press in play_note2.
+function play_note2_Callback(hObject, eventdata, handles)
+jouerNote(handles.Accord,2);
+
+
+% --- Executes on button press in play_note3.
+function play_note3_Callback(hObject, eventdata, handles)
+jouerNote(handles.Accord,3);
+
+% --- Executes on button press in play_note4.
+function play_note4_Callback(hObject, eventdata, handles)
+jouerNote(handles.Accord,4);
+
+% --- Executes on button press in play_note5.
+function play_note5_Callback(hObject, eventdata, handles)
+jouerNote(handles.Accord,5);
+
+% --- Executes on button press in play_note6.
+function play_note6_Callback(hObject, eventdata, handles)
+jouerNote(handles.Accord,6);
+
+
+
 %% Fonctions personnelles
 % Fonction d'initialisation des accords de type E ou Open sur base de
 % l'octave 3.
@@ -281,6 +311,15 @@ for i=1:6
     end;
 end;
 
+% Fonction permettant de jouer la note en paramètre
+function jouerNote(Accord,note)
+    tsec=0.5;
+    a=2;
+    F=44100;
+    t = linspace(0,tsec,tsec*F);
+    y=a*sin(2*pi*Accord{2,note}*t);
+    sound(y,F);
+    
 % Fonction permettant de jouer l'accord en paramètre
 function jouerAccord(Accord)
     tsec=0.5;
@@ -364,3 +403,14 @@ boutonOffOn(pos, 'off', handles);
 accorderNote(pos,handles);
 boutonOffOn(pos, 'on', handles);
 xlabel('');
+
+% Fonction pour l'affichage des boutons style "note"
+function imageNotes(handles)
+[x,map]=imread('noteM.jpg');
+Img=imresize(x, [20 20]);
+set(handles.play_note1, 'cdata', Img);
+set(handles.play_note2, 'cdata', Img);
+set(handles.play_note3, 'cdata', Img);
+set(handles.play_note4, 'cdata', Img);
+set(handles.play_note5, 'cdata', Img);
+set(handles.play_note6, 'cdata', Img);
