@@ -15,6 +15,9 @@
 \usepackage{mcode}
 \usepackage{float}
 \usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
 
 \geometry{
 	body={160mm,250mm},
@@ -50,10 +53,19 @@ showstringspaces=false,
   {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1}
 
 
+\pagestyle{fancy}
+\lhead{\AuthorName} % Top left header
+\chead{\Course} % Top center header
+\rhead{\Date} % Top right header
+\lfoot{\lastxmark} % Bottom left footer
+\cfoot{} % Bottom center footer
+\rfoot{\ \thepage\ / 	\pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
-\newcommand{\Course}{EPHEC} % Course/class
+\newcommand{\Course}{} % Course/class
 \newcommand{\AuthorName}{Herrier L., Juckler C., Musuvaho G., Nyssens S.} % Your name
-\newcommand{\Date}{Décembre 2014}
+\newcommand{\Date}{EPHEC - Décembre 2014}
 
 
 \author{Herrier Lucie \and Juckler Christian \and Musuvaho Grace \and Nyssens Sylvain}
@@ -79,6 +91,10 @@ showstringspaces=false,
 \input{amelioration}
 \input{analyseGroupe}
 \include{biblio}
+\newpage
+\mbox{}
+\thispagestyle{empty}
+\newpage
 \appendix
 \section{Code}
 \lstinputlisting{accordeur.m}
